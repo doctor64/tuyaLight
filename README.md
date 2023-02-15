@@ -32,6 +32,8 @@ Actually, part of it. I was lazy enough to trace 3.3 voltage converter :)
 
 ## Tasks
 - [x] zigbee2mqtt converter
+- [ ] save state and power on control
+- [ ] reporting
 - [ ] OTA
 - [ ] RGBW support
 - [ ] Direct control of LED PWM using custom cluster
