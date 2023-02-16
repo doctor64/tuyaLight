@@ -203,7 +203,7 @@ void tuyaLightAttrsStoreTimerStart(void)
 	if(tuyaLightAttrsStoreTimerEvt){
 		TL_ZB_TIMER_CANCEL(&tuyaLightAttrsStoreTimerEvt);
 	}
-	tuyaLightAttrsStoreTimerEvt = TL_ZB_TIMER_SCHEDULE(tuyaLightAttrsStoreTimerCb, NULL, 200);
+	tuyaLightAttrsStoreTimerEvt = TL_ZB_TIMER_SCHEDULE(tuyaLightAttrsStoreTimerCb, NULL, 1000);//200);
 }
 
 void tuyaLightAttrsChk(void)
@@ -242,7 +242,7 @@ void app_task(void)
 
 		report_handler();
 
-#if 0/* NOTE: If set to '1', the latest status of lighting will be stored. */
+#if 1/* NOTE: If set to '1', the latest status of lighting will be stored. */
 		tuyaLightAttrsChk();
 #endif
 	}
