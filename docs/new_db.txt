@@ -1,0 +1,6 @@
+{"id":59,"type":"Router","ieeeAddr":"0xa4c138d98f86806b","nwkAddr":55353,"manufId":4417,"manufName":"TELINK","powerSource":"Mains (single
+phase)","modelId":"TLSR82xx","epList":[1,242],"endpoints":{"1":{"profId":260,"epId":1,"devId":257,"inClusterList":[0,3,4,5,6,8,4096],
+"outClusterList":[25],"clusters":{"genBasic":{"attributes":{"appVersion":0,"hwVersion":0,"manufacturerName":"TELINK","powerSource":1}}},
+"binds":[],"configuredReportings":[],"meta":{}},"242":{"profId":41440,"epId":242,"devId":97,"inClusterList":[],"outClusterList":[33],
+"clusters":{},"binds":[],"configuredReportings":[],"meta":{}}},"appVersion":0,"stackVersion":2,"hwVersion":0,"swBuildId":"0122052017",
+"zclVersion":3,"interviewCompleted":true,"meta":{"configured":88764544},"lastSeen":1672612886851,"defaultSendRequestWhen":"immediate"}
