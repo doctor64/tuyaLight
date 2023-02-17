@@ -6,12 +6,12 @@ See [this repo](https://github.com/pvvx/TLSRPGM) for details how to make program
 
 ## Connection
 Don't forget to disconnect power supply from LED controller!  
-Solder 3 wires to module as shown ![tuya](docs\tuya_wire)
-Connect wires to programmer
+Solder 3 wires to module as shown ![tuya](tuya_wires.jpg)  
+Connect wires to programmer  
 SWS to SWM  
 +3.3V to +3.3V  
-GND to GND
-See picture of programmer pins.
+GND to GND  
+See picture of programmer pins ![Programmer](prog_wires.jpg)
 
 ## Test connection
 Test programmer conection - execute command using correct serial port
@@ -64,7 +64,7 @@ REGISTERS:
 ````
 ## Read flash
 Backup existing firmware, just in case
-'python TlsrPgm.py -w -t 1 -a 20 -s -p/dev/ttyUSB0 rf 0 0x100000 tuya_1024k_orig.bin'
+`python TlsrPgm.py -w -t 1 -a 20 -s -p/dev/ttyUSB0 rf 0 0x100000 tuya_1024k_orig.bin`
 You should get output
 ```
 =======================================================
