@@ -11,7 +11,7 @@ This project based on sample from TeLink zigbee SDK.
 See [docs/sdk_installation.md](docs/sdk_installation.md)
 
 # Flashing
-TBD
+See [docs/flash.md](docs/flash.md)
 
 # OTA
 See [docs/ota.md](docs/ota.md)
