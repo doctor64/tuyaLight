@@ -8,10 +8,13 @@ So, this project was born.
 This project based on sample from TeLink zigbee SDK.
 
 # Compilation
-See [docs/installation.md](docs/sdk_installation.md)
+See [docs/sdk_installation.md](docs/sdk_installation.md)
 
 # Flashing
-TBD
+See [docs/flash.md](docs/flash.md)
+
+# OTA
+See [docs/ota.md](docs/ota.md)
 
 # Technical details
 TuYa Zigbee LED controllers can be bought cheapely on Aliexpress. for example, [Here](https://www.aliexpress.com/item/1005005196855536.html). From hardware point of view, they all the same, at least TS0501B and TS0504B, and differs only by firmware and external connector to LED strip.
@@ -32,9 +35,9 @@ Actually, part of it. I was lazy enough to trace 3.3 voltage converter :)
 
 ## Tasks
 - [x] zigbee2mqtt converter
-- [ ] save state and power on control
+- [x] save state and power on control
 - [ ] reporting
-- [ ] OTA
+- [x] OTA
 - [ ] RGBW support
 - [ ] Direct control of LED PWM using custom cluster
 - [ ] Support of other controller types

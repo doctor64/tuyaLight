@@ -23,7 +23,8 @@ const definition = {
     // - extend.light_onoff_brightness_colortemp
     // - extend.light_onoff_brightness_color
     // - extend.light_onoff_brightness_colortemp_color
-    extend: extend.light_onoff_brightness(),
+    extend: extend.light_onoff_brightness({disablePowerOnBehavior: false}),
+    ota: ota.zigbeeOTA,
 };
 
 module.exports = definition;
