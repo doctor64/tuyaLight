@@ -23,7 +23,14 @@ const definition = {
     // - extend.light_onoff_brightness_colortemp
     // - extend.light_onoff_brightness_color
     // - extend.light_onoff_brightness_colortemp_color
-    extend: extend.light_onoff_brightness({disablePowerOnBehavior: false}),
+    extend: extend.light_onoff_brightness({noConfigure: true}),
+    configure: async (device, coordinatorEndpoint, logger) => {
+        await extend.light_onoff_brightness().configure(device, coordinatorEndpoint, logger);
+        const endpoint = device.getEndpoint(1);
+        await reporting.bind(endpoint, coordinatorEndpoint, ['genOnOff', 'genLevelCtrl']);
+        await reporting.onOff(endpoint);
+        await reporting.brightness(endpoint);
+    },
     ota: ota.zigbeeOTA,
 };
 
