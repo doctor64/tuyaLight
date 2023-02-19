@@ -7,6 +7,13 @@ But, seriously, not counting common drawbacks of TuYa devices firmware like manu
 So, this project was born. 
 This project based on sample from TeLink zigbee SDK.
 
+## Improvements over original firmware
+- Hardware button can be used as On/Off switch
+- Working reporting with binding or hardware button
+- Have a Power on behavior
+- No more annoying bug with light goes off shortly afetr turn on (I hope)
+- OTA updates
+
 # Compilation
 See [docs/sdk_installation.md](docs/sdk_installation.md)
 
