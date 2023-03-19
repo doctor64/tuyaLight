@@ -10,6 +10,8 @@ Zigbee Manufacturer     _TZ3210_9q49basr
 IEEE Address            0xa4c138504d6375a0
 
 Programmer https://github.com/pvvx/TLSRPGM
+OTA from original firmware "fileVersion":64,"imageType":54179,"manufacturerCode":4417
+version 0x40 image_type 0xD3A3 manufacturer_code 1141
 
 module ZT3L == TeLink TLSR8258
 Pin number 	Symbol 	I/O type 	Function
