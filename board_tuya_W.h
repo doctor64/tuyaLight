@@ -53,48 +53,8 @@ extern "C" {
 * LED_CW		GPIO_PB5	//B5 -- cool white, led PWM5 mux 3
 * LED_WW        GPIO_PC2    //C2 -  warm white      PWM0 mux 4
 ****************************************************************/
-#if defined COLOR_RGB_SUPPORT && (COLOR_RGB_SUPPORT == 1)
-#warning("Tuya RGB support")
 
-#define LED_R						GPIO_PB4	//B4 -- red			PWM4
-#define LED_G						GPIO_PC3	//C3 -- green		PWM1
-#define LED_B						GPIO_PD2	//D2 -- blue		PWM3
-
-#define PWM_R_CHANNEL				4//PWM4
-#define PWM_R_CHANNEL_SET()			do{	\
-										gpio_set_func(LED_R, AS_PWM4); 		\
-									}while(0)
-
-#define PWM_G_CHANNEL				1//PWM1
-#define PWM_G_CHANNEL_SET()			do{	\
-										gpio_set_func(LED_G, AS_PWM1); 	\
-										/* drv_pwm_n_invert(PWM_G_CHANNEL);*/ 	\
-									}while(0)
-
-#define PWM_B_CHANNEL				3//PWM3
-#define PWM_B_CHANNEL_SET()			do{	\
-										gpio_set_func(LED_B, AS_PWM3); 		\
-									}while(0)
-
-#define R_LIGHT_PWM_CHANNEL			PWM_R_CHANNEL
-#define G_LIGHT_PWM_CHANNEL			PWM_G_CHANNEL
-#define B_LIGHT_PWM_CHANNEL			PWM_B_CHANNEL
-#define R_LIGHT_PWM_SET()			PWM_R_CHANNEL_SET()
-#define G_LIGHT_PWM_SET()			PWM_G_CHANNEL_SET()
-#define B_LIGHT_PWM_SET()			PWM_B_CHANNEL_SET()
-
-#define LED_W						GPIO_PB5
-
-#define PD4_FUNC					AS_GPIO
-#define PD4_OUTPUT_ENABLE			1
-#define PD4_INPUT_ENABLE			0
-
-#define LED_POWER					NULL
-#define LED_PERMIT					LED_W
-
-#else
-
-#warning("Tuya CW/CCT support")
+//#warning("Tuya CW/CCT support")
 //PWM configuration, LED_WW as warm light, LED_CW as cool light or single LED.
 #define LED_WW						GPIO_PC2	//C2 warm white     PWM0
 #define LED_CW						GPIO_PB5	//B5 cool white		PWM5
@@ -119,7 +79,30 @@ extern "C" {
 #define LED_G						GPIO_PC3
 #define LED_B						GPIO_PD2
 
-#define PB4_FUNC					AS_GPIO
+#define PWM_R_CHANNEL               4//PWM4
+#define PWM_R_CHANNEL_SET()         do{ \
+                                        gpio_set_func(LED_R, AS_PWM4);      \
+                                    }while(0)
+
+#define PWM_G_CHANNEL               1//PWM1
+#define PWM_G_CHANNEL_SET()         do{ \
+                                        gpio_set_func(LED_G, AS_PWM1);  \
+                                        /* drv_pwm_n_invert(PWM_G_CHANNEL);*/   \
+                                    }while(0)
+
+#define PWM_B_CHANNEL               3//PWM3
+#define PWM_B_CHANNEL_SET()         do{ \
+                                        gpio_set_func(LED_B, AS_PWM3);      \
+                                    }while(0)
+
+#define R_LIGHT_PWM_CHANNEL         PWM_R_CHANNEL
+#define G_LIGHT_PWM_CHANNEL         PWM_G_CHANNEL
+#define B_LIGHT_PWM_CHANNEL         PWM_B_CHANNEL
+#define R_LIGHT_PWM_SET()           PWM_R_CHANNEL_SET()
+#define G_LIGHT_PWM_SET()           PWM_G_CHANNEL_SET()
+#define B_LIGHT_PWM_SET()           PWM_B_CHANNEL_SET()
+
+/*#define PB4_FUNC					AS_GPIO
 #define PB4_OUTPUT_ENABLE			1
 #define PB4_INPUT_ENABLE			0
 
@@ -129,12 +112,11 @@ extern "C" {
 
 #define PD2_FUNC					AS_GPIO
 #define PD2_OUTPUT_ENABLE			1
-#define PD2_INPUT_ENABLE			0
+#define PD2_INPUT_ENABLE			0*/
 
 #define LED_POWER					NULL
 #define LED_PERMIT					NULL
 
-#endif
 
 // UART
 #if ZBHCI_UART

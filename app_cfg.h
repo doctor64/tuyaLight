@@ -47,8 +47,8 @@ extern "C" {
 #define	ZBHCI_UART						0
 
 /* RGB or CCT */
-#define COLOR_RGB_SUPPORT				0
-#define COLOR_CCT_SUPPORT				0
+//#define COLOR_RGB_SUPPORT				0
+//#define COLOR_CCT_SUPPORT				0
 
 /* BDB */
 #define TOUCHLINK_SUPPORT				1

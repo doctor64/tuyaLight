@@ -42,7 +42,7 @@
 #endif
 
 #define APP_RELEASE                          0x10//app release 1.0
-#define APP_BUILD                            0x02//app build 01
+#define APP_BUILD                            0x03//app build 01
 #define STACK_RELEASE                        0x30//stack release 3.0
 #define STACK_BUILD                          0x01//stack build 01
 #define HARDWARE_REV                         0x01
@@ -51,8 +51,31 @@
 #define ZCL_BASIC_MFG_NAME          {6,'D','o','c','L','a','b'}
 #endif
 #ifndef ZCL_BASIC_MODEL_ID
-#define ZCL_BASIC_MODEL_ID          {13,'F','i','x','e','d','_','T','S','0','5','0','1','B'} //TS0501B - CW, TS0504B - RGBW
+    #if defined BUILD_TS0501B
+        #define ZCL_BASIC_MODEL_ID          {13,'F','i','x','e','d','_','T','S','0','5','0','1','B'} //TS0501B - CW
+        #define COLOR_RGB_SUPPORT             0
+        #define COLOR_CCT_SUPPORT             0
+    #elif defined BUILD_TS0502B
+        #define ZCL_BASIC_MODEL_ID          {13,'F','i','x','e','d','_','T','S','0','5','0','2','B'} //TS0502B - CW/WW
+        #define COLOR_RGB_SUPPORT             0
+        #define COLOR_CCT_SUPPORT             1
+    #elif defined BUILD_TS0503B
+        #define ZCL_BASIC_MODEL_ID          {13,'F','i','x','e','d','_','T','S','0','5','0','3','B'} //TS0503B - RGB
+        #define COLOR_RGB_SUPPORT             1
+        #define COLOR_CCT_SUPPORT             0
+    #elif defined BUILD_TS0504B
+        #define ZCL_BASIC_MODEL_ID          {13,'F','i','x','e','d','_','T','S','0','5','0','4','B'} //TS0504B - RGBW
+        #define COLOR_RGB_SUPPORT             1
+        #define COLOR_CCT_SUPPORT             0
+    #elif defined BUILD_TS0505B
+        #define ZCL_BASIC_MODEL_ID          {13,'F','i','x','e','d','_','T','S','0','5','0','5','B'} //TS0505B - RGB/CW/WW
+        #define COLOR_RGB_SUPPORT             1
+        #define COLOR_CCT_SUPPORT             1
+    #else
+        #warning "Unknown build variant"
+    #endif
 #endif
+
 #ifndef ZCL_BASIC_SW_BUILD_ID
 #define ZCL_BASIC_SW_BUILD_ID       {8,'v',(APP_RELEASE >> 4) + 0x30,'.',APP_BUILD + 0x30,'s',(STACK_RELEASE >> 4) + 0x30,'.',STACK_BUILD + 0x30}
 #endif
@@ -64,7 +87,9 @@
 #define MANUFACTURER_CODE_DOCTOR64           0x6464
 #define MANUFACTURER_CODE_TELINK             0x1141//Telink ID
 #define    IMAGE_TYPE                        ((CHIP_TYPE << 8) | IMAGE_TYPE_LIGHT)
+//#define    IMAGE_TYPE                        0xD3A3 //for tuya OTA
 #define    FILE_VERSION                      ((APP_RELEASE << 24) | (APP_BUILD << 16) | (STACK_RELEASE << 8) | STACK_BUILD)
+//#define    FILE_VERSION                      0xff //for tuya ota
 
 /* Pre-compiled link configuration. */
 #define IS_BOOT_LOADER_IMAGE                 0

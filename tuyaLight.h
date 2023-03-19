@@ -64,17 +64,18 @@ typedef struct{
  *  @brief Defined for basic cluster attributes
  */
 typedef struct{
-	u8 	zclVersion;
-	u8	appVersion;
-	u8	stackVersion;
-	u8	hwVersion;
-	u8	manuName[ZCL_BASIC_MAX_LENGTH];
-	u8	modelId[ZCL_BASIC_MAX_LENGTH];
-	u8	swBuildId[ZCL_BASIC_MAX_LENGTH];
-	u8	powerSource;
-	u8  genDevClass;
-	u8  genDevType;
-	u8	deviceEnable;
+	u8 	zclVersion;                         //attr 0
+	u8	appVersion;                         //attr 1
+	u8	stackVersion;                       //attr 2
+	u8	hwVersion;                          //attr 3
+	u8	manuName[ZCL_BASIC_MAX_LENGTH];     //attr 4
+	u8	modelId[ZCL_BASIC_MAX_LENGTH];      //attr 5
+	// u8  dateCode[ZCL_BASIC_MAX_LENGTH];     //attr 6
+	u8	powerSource;                        //attr 7
+	u8  genDevClass;                        //attr 8
+	u8  genDevType;                         //attr 9
+	u8	deviceEnable;                       //attr 12
+	u8  swBuildId[ZCL_BASIC_MAX_LENGTH];    //attr 4000
 }zcl_basicAttr_t;
 
 /**
