@@ -1,3 +1,7 @@
+**This repository is ARCHIVED!**
+
+Development of replacement firmwares for Tuya devices continued in [tuyaZigbee](https://github.com/doctor64/tuyaZigbee)
+
 # tuyaLight - replacement firmware for TuYa LED controllers
 This project intended to replace fitmware in TuYa TS0501B, TS0504B (and possible others) LED controllers.
 
